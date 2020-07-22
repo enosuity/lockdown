@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<% unless @book.authors.empty? %>
+  <p> Authors - </p>
+  <ol>
+    <% @book.authors.each do |author| %>
+      <li start="1">
+        <%= author.full_name %>
+      </li>
+    <% end  %>
+  </ol>
+<% end %>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
